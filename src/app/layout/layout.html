@@ -1,0 +1,22 @@
+<!-- <div class="layout-container"> -->
+
+  <button class="toggle-btn" (click)="toggleNav()">
+    {{ isCollapsed ? 'Open Menu' : 'Close Menu' }}
+  </button>
+  <h2 class="logo" *ngIf="!isCollapsed">ROOM-NEEDS</h2>
+  <nav class="sidenav" [class.collapsed]="isCollapsed">
+  <ul>
+    <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+    <li><a routerLink="/groceries" routerLinkActive="active">Groceries</a></li>
+    <li><a routerLink="/split" routerLinkActive="active">Split</a></li>
+    <li><a routerLink="/rent-alerts" routerLinkActive="active">Rent Alerts</a></li>
+    <li><a routerLink="/login">Logout</a></li>
+  </ul>
+</nav>
+
+<!-- Main Content -->
+<main [class.collapsed]="isCollapsed">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- </div> -->

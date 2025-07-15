@@ -1,0 +1,48 @@
+<!-- <h2>Split Expenses</h2>
+
+<p>Total Grocery Cost: ₹{{ totalAmount }}</p>
+<p>Number of Members: {{ members.length }}</p>
+<p>Each Member Should Pay: ₹{{ splitPerPerson.toFixed(2) }}</p>
+
+<hr />
+
+<h3>Room Members</h3>
+<ul>
+  <li *ngFor="let member of members">
+    {{ member.name }} - {{ member.mobile }} - {{ member.place }}
+  </li>
+</ul>
+
+<button  (click)="goback()">Back to dashboard</button> -->
+<div class="split-container">
+  <h2>Split Expenses</h2>
+
+  <p><strong>Total Grocery Cost:</strong> ₹{{ totalAmount }}</p>
+  <p><strong>Number of Members:</strong> {{ members.length }}</p>
+  <p><strong>Each Member Should Pay:</strong> ₹{{ splitPerPerson | number:'1.2-2' }}</p>
+
+  <hr>
+
+  <table class="split-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Paid</th>
+        <th>Share</th>
+        <th>Remaining</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of memberSplits">
+        <td>{{ m.name }}</td>
+        <td>₹{{ m.paid | number:'1.2-2' }}</td>
+        <td>₹{{ m.share | number:'1.2-2' }}</td>
+        <td [ngClass]="{'positive': m.remaining < 0, 'negative': m.remaining > 0}">
+          ₹{{ m.remaining | number:'1.2-2' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="goback()">Back to Dashboard</button>
+</div>

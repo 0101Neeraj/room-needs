@@ -1,0 +1,82 @@
+<!-- <h2>Dashboard</h2>
+
+<p *ngIf="roomNumber">Logged into Room: <strong>{{ roomNumber }}</strong></p>
+
+<h3>Room Members:</h3>
+<ul>
+  <li *ngFor="let member of members">
+    {{ member.name }} - {{ member.mobile }} - {{ member.place }}
+  </li>
+</ul>
+
+<hr />
+
+<h3>Room Options:</h3>
+<nav>
+  <a routerLink="/groceries">🛒 Add Groceries</a><br />
+  <a routerLink="/split">💰 Split Expenses</a><br />
+  <a routerLink="/rent-alerts">📅 Rent Alerts</a><br />
+  <a routerLink="/">🚪 Logout</a>
+</nav> -->
+
+
+<!-- <div class="wrapper">
+  <div class="container">
+    <h2>Dashboard</h2>
+
+    <p class="room-info">Room Number: {{ roomNumber }}</p>
+
+    <div *ngIf="members && members.length > 0">
+      <h3>Room Members</h3>
+      <ul class="member-list">
+        <li *ngFor="let member of members">
+          <strong>{{ member.name }}</strong> – {{ member.mobile }} – {{ member.place }}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!members || members.length === 0">
+      <p>No members found in this room.</p>
+    </div>
+
+    <button class="nav-button" routerLink="/groceries">Manage Groceries</button>
+    <button class="nav-button" routerLink="/split">Split Expenses</button>
+    <button class="nav-button" routerLink="/login">Logout</button>
+  </div>
+</div> -->
+
+
+  <!-- Sidebar
+  <aside class="sidebar">
+    <h3>RoomApp</h3>
+    <nav>
+      <ul>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/groceries">Groceries</a></li>
+        <li><a routerLink="/split">Split</a></li>
+        <li><a routerLink="/login">Logout</a></li>
+      </ul>
+    </nav>
+  </aside> -->
+<div class="dashboard-wrapper">
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="topbar">
+      <h2>Room Dashboard</h2>
+      <span>Room No: {{ roomNumber }}</span>
+    </header>
+
+    <section class="content-section">
+      <h3>Members</h3>
+      <div *ngIf="members.length > 0; else noMembers">
+        <div class="member-card" *ngFor="let member of members">
+          <h4>{{ member.name }}</h4>
+          <p>Mobile: {{ member.mobile }}</p>
+          <p>Place: {{ member.place }}</p>
+        </div>
+      </div>
+      <ng-template #noMembers>
+        <p>No members found in this room.</p>
+      </ng-template>
+    </section>
+  </main>
+</div>

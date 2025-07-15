@@ -1,0 +1,36 @@
+<div class="rent-alerts">
+  <h2>Monthly Rent History</h2>
+
+  <form (ngSubmit)="addCustomRent()" class="custom-rent-form">
+    <label>
+      Month-Year:
+      <input type="month" [(ngModel)]="customMonth" name="month" required />
+    </label>
+    <label>
+      Amount:
+      <input type="number" [(ngModel)]="customAmount" name="amount" required />
+    </label>
+    <button type="submit">Add Rent</button>
+  </form>
+
+  <table class="grocery-table" *ngIf="rentList.length > 0">
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Amount</th>
+        <th>Added By</th>
+        <th>Added On</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of rentList">
+        <td>{{ r.month_year }}</td>
+        <td>₹{{ r.amount }}</td>
+        <td>{{ r.added_by }}</td>
+        <td>{{ r.added_on }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="rentList.length === 0">No rent data found.</p>
+</div>

@@ -1,0 +1,26 @@
+<!-- <h2>Login</h2>
+
+<form (ngSubmit)="loginRoom()">
+  <label>Room Number</label>
+  <input [(ngModel)]="roomNumber" name="roomNumber" required />
+  <button type="submit">Login</button>
+</form>
+
+<button (click)="goToRegister()">New Room? Register Here</button> -->
+
+
+<div class="wrapper">
+  <div class="container">
+    <h2>Login</h2>
+
+    <form (ngSubmit)="loginRoom()">
+      <label>Room Number</label>
+      <input [(ngModel)]="roomNumber" name="roomNumber" required placeholder="Enter Room Number" />
+      <button type="submit">Login</button>
+    </form>
+
+    <button class="link-button" (click)="goToRegister()">New Room? Register Here</button>
+  </div>
+</div>
+
+

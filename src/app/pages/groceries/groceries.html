@@ -1,0 +1,87 @@
+<!-- <h2>Groceries</h2>
+
+<form (ngSubmit)="addGrocery()">
+  <input type="text" placeholder="Item" [(ngModel)]="item" name="item" required />
+  <input type="number" placeholder="Amount" [(ngModel)]="amount" name="amount" required />
+  <input type="text" placeholder="Paid By" [(ngModel)]="paidBy" name="paidBy" required />
+  <button type="submit">Add</button>
+</form>
+
+<hr />
+
+<h3>Grocery List</h3>
+<ul>
+  <li *ngFor="let g of groceryList">
+    {{ g.item }} - ₹{{ g.amount }} (Paid by: {{ g.paidBy }})
+  </li>
+</ul>
+
+<button  (click)="goback()">Back to dashboard</button> -->
+<!-- 
+<div class="groceries-container">
+  <h2>Groceries</h2>
+<button class="toggle-btn" (click)="toggleForm()">
+  {{ showForm ? 'Close' : 'Add Grocery' }}
+</button>
+  <form *ngIf="showForm" class="grocery-form" (ngSubmit)="addgroceries()">
+  <input type="text" placeholder="Item" [(ngModel)]="item" name="item" required />
+  <input type="number" placeholder="Amount" [(ngModel)]="amount" name="amount" required />
+  <input type="text" placeholder="Paid By" [(ngModel)]="paidBy" name="paidBy" required />
+  <button type="submit">Add</button>
+</form>
+
+  <hr />
+
+  <h3>Grocery List</h3>
+  <ul>
+    <li *ngFor="let g of groceryList">
+      {{ g.item_name }} - ₹{{ g.cost }} (Paid by: {{ g.added_by }} ) {{g.date_added}}
+    </li>
+  </ul>
+
+  <button (click)="goback()">Back to dashboard</button> 
+</div> -->
+<div class="groceries-container">
+  <h2 class="title">Groceries</h2>
+
+  <button class="toggle-btn" (click)="toggleForm()">
+  {{ showForm ? 'Close' : 'Add Grocery' }}
+</button>
+
+  <form *ngIf="showForm" (ngSubmit)="addgroceries()" class="grocery-form">
+    <input type="text" placeholder="Item" [(ngModel)]="item" name="item" required />
+    <input type="number" placeholder="Amount" [(ngModel)]="amount" name="amount" required />
+
+    <select [(ngModel)]="paidBy" name="paidBy" required>
+      <option value="">Select Member</option>
+      <option *ngFor="let member of members" [value]="member.name">
+        {{ member.name }}
+      </option>
+    </select>
+
+    <button type="submit">Save</button>
+  </form>
+
+  <h3 class="list-title">Grocery List</h3>
+
+  <table class="grocery-table" *ngIf="groceryList.length > 0">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Cost (₹)</th>
+        <th>Paid By</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let g of groceryList">
+        <td>{{ g.item_name }}</td>
+        <td>{{ g.cost }}</td>
+        <td>{{ g.added_by }}</td>
+        <td>{{ g.date_added | date: 'yyyy-MM-dd' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="groceryList.length === 0">No groceries added yet.</p>
+</div>

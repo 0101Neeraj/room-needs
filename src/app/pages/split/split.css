@@ -1,0 +1,60 @@
+.split-container {
+  padding: 2rem;
+  background-color: #ff9999; /* Same background as Groceries */
+  min-height: 100vh;
+}
+
+.split-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.split-container p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.split-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.split-table th {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.split-table td {
+  padding: 10px;
+  background-color: #ffe4b5;
+  border-bottom: 1px solid #ccc;
+}
+
+.split-table tr:nth-child(even) td {
+  background-color: #ffc0cb;
+}
+
+.positive {
+  color: green;
+  font-weight: bold;
+}
+
+.negative {
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

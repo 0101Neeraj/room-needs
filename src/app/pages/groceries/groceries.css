@@ -1,0 +1,80 @@
+.groceries-container {
+  background-color: #f99691; /* Light orange */
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem;
+  color: #000;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.add-button {
+  background-color: #ff7f50;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.grocery-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.grocery-form input,
+.grocery-form button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.grocery-form button {
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.list-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.grocery-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.grocery-table th,
+.grocery-table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.grocery-table th {
+  background-color: #f57c00;
+  color: white;
+}
+
+.grocery-table tr:nth-child(even) {
+  background-color: #ffe0b2;
+}
+
+.back-button {
+  background-color: #444;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

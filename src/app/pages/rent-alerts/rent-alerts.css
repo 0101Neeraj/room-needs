@@ -1,0 +1,19 @@
+.rent-alerts {
+  padding: 20px;
+}
+
+.rent-alerts table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rent-alerts th,
+.rent-alerts td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.rent-alerts th {
+  background: orange;
+  color: white;
+}
