@@ -1,59 +1,101 @@
-# RoomNeeds
+# 🏠 Room Needs – Full Stack Room Management System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+A full-stack web application to manage shared room expenses, groceries, rent alerts, and members – built with Angular, PHP, and MySQL.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🔧 Features
 
-```bash
-ng serve
-```
+- 🧾 Add & View Groceries
+- 👥 Member Management
+- 💰 Rent Split Functionality
+- 🔐 Login & Register via Room Number
+- 📦 Backend APIs using PHP
+- 💻 Data stored in MySQL (phpMyAdmin)
+- 🛡️ JWT-based Authentication
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🛠️ Tech Stack
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+| Layer     | Tech       |
+|-----------|------------|
+| Frontend  | Angular 17 |
+| Backend   | PHP (8.x)  |
+| Database  | MySQL (via XAMPP/phpMyAdmin) |
+| Auth      | JWT (PHP Implementation)     |
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📁 Folder Structure
 
-```bash
-ng generate --help
-```
+room-needs/
+├── frontend/ # Angular App
+│ ├── src/
+│ └── ...
+├── backend/ # PHP scripts (APIs)
+│ ├── db.php
+│ ├── login.php
+│ ├── register.php
+│ ├── groceries/
+│ ├── rent/
+│ └── members/
+└── room_app.sql # MySQL Database Export
 
-## Building
+markdown
+Copy
+Edit
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 🚀 Getting Started
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### 🔹 Backend (PHP + MySQL)
 
-## Running unit tests
+1. Place your `backend/` folder inside `htdocs/` in XAMPP.
+2. Start **Apache** and **MySQL** using XAMPP.
+3. Import `room_app.sql` into phpMyAdmin to create the database.
+4. Ensure `db.php` has correct database connection:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+```php
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "room_app";
+🔹 Frontend (Angular)
+bash
+Copy
+Edit
+cd frontend
+npm install
+ng serve --open
+Angular will run on http://localhost:4200 and communicate with your PHP backend (e.g., http://localhost/backend/login.php)
 
-```bash
-ng test
-```
+🔌 Key API Endpoints
+Method	Endpoint	Description
+POST	/backend/login.php	Room Login
+POST	/backend/register.php	Room Registration
+POST	/backend/groceries/add.php	Add Grocery Item
+POST	/backend/groceries/fetch.php	Fetch Groceries
+POST	/backend/members/get.php	Get Room Members
 
-## Running end-to-end tests
+📌 Enhancements to Consider
+✅ Mark rent/grocery as "Paid"
 
-For end-to-end (e2e) testing, run:
+📅 Monthly auto rent split
 
-```bash
-ng e2e
-```
+📤 Export data to CSV or PDF
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+📲 Mobile responsive UI
 
-## Additional Resources
+📨 Notifications or email alerts
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+📊 Analytics for expense trends
+
+🧑 Author
+Kotagiri Neeraj
+Frontend Developer
+📧 neerajkotagiri8@gmail.com
+🔗 
+
+
