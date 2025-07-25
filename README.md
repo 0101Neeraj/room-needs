@@ -42,10 +42,6 @@ room-needs/
 │ └── members/
 └── room_app.sql # MySQL Database Export
 
-markdown
-Copy
-Edit
-
 ---
 
 ## 🚀 Getting Started
